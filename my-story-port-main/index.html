@@ -6,57 +6,12 @@
     <title>Portfolio - Product Designer</title>
     <meta name="description" content="Creative product designer portfolio showcasing innovative UI/UX projects and design solutions" />
     <meta name="author" content="Lovable" />
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      window.tailwind = window.tailwind || {};
-      tailwind.config = {
-        darkMode: 'class',
-        corePlugins: { preflight: false },
-        theme: {
-          extend: {
-            container: { center: true, padding: '1rem' },
-            fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'] },
-            colors: {
-              background: 'hsl(var(--background))',
-              foreground: 'hsl(var(--foreground))',
-              card: 'hsl(var(--card))',
-              'card-foreground': 'hsl(var(--card-foreground))',
-              popover: 'hsl(var(--popover))',
-              'popover-foreground': 'hsl(var(--popover-foreground))',
-              primary: 'hsl(var(--primary))',
-              'primary-foreground': 'hsl(var(--primary-foreground))',
-              secondary: 'hsl(var(--secondary))',
-              'secondary-foreground': 'hsl(var(--secondary-foreground))',
-              muted: 'hsl(var(--muted))',
-              'muted-foreground': 'hsl(var(--muted-foreground))',
-              accent: 'hsl(var(--accent))',
-              'accent-foreground': 'hsl(var(--accent-foreground))',
-              destructive: 'hsl(var(--destructive))',
-              'destructive-foreground': 'hsl(var(--destructive-foreground))',
-              border: 'hsl(var(--border))',
-              input: 'hsl(var(--input))',
-              ring: 'hsl(var(--ring))',
-              // custom extras
-              'hero-bg': 'hsl(var(--hero-bg))',
-              'service-bg': 'hsl(var(--service-bg))'
-            },
-            borderRadius: {
-              lg: 'var(--radius)',
-              md: 'calc(var(--radius) - 2px)',
-              sm: 'calc(var(--radius) - 4px)'
-            },
-            boxShadow: {
-              soft: 'var(--shadow-soft)',
-              card: 'var(--shadow-card)'
-            }
-          }
-        }
-      };
-    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- SwiperJS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     
 
@@ -70,8 +25,9 @@
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
   </head>
 
-  <body>
+  <body class="bg-gradient-to-r from-gray-800 via-blue-700 to-gray-900">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </body>
 </html>

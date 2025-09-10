@@ -2,7 +2,34 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./index.html",
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}"
+  ],
+  safelist: [
+    // token-based utilities used across the app
+    "bg-background",
+    "text-foreground",
+    "border-border",
+    "bg-card",
+    "text-card-foreground",
+    "bg-popover",
+    "text-popover-foreground",
+    "text-primary",
+    "bg-primary",
+    "text-primary-foreground",
+    "bg-secondary",
+    "text-secondary-foreground",
+    "bg-muted",
+    "text-muted-foreground",
+    "bg-accent",
+    "text-accent-foreground",
+    "bg-destructive",
+    "text-destructive-foreground"
+  ],
   prefix: "",
   theme: {
     container: {

@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { PortfolioCard } from "@/components/ui/portfolio-card";
 
 const portfolioProjects = [
@@ -64,28 +65,86 @@ const portfolioProjects = [
 ];
 
 export const PortfolioSection = () => {
+  const topRef = useRef<HTMLDivElement | null>(null);
+  const bottomRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const SwiperGlobal = (window as any).Swiper;
+    if (!SwiperGlobal) return;
+
+    const makeSwiper = (el: HTMLDivElement, reverse = false) =>
+      new SwiperGlobal(el, {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        loop: true,
+        loopAdditionalSlides: 6,
+        speed: 7000,
+        freeMode: { enabled: true, momentum: false },
+        autoplay: { delay: 0, disableOnInteraction: false, reverseDirection: reverse },
+        breakpoints: {
+          640: { spaceBetween: 16 },
+          1024: { spaceBetween: 24 },
+        },
+      });
+
+    const top = topRef.current ? makeSwiper(topRef.current, true) : null;
+    const bottom = bottomRef.current ? makeSwiper(bottomRef.current, false) : null;
+
+    return () => {
+      top?.destroy?.();
+      bottom?.destroy?.();
+    };
+  }, []);
+
+  const top = portfolioProjects.slice(0, 3);
+  const bottom = portfolioProjects.slice(3, 6);
+
   return (
-    <section className="py-16 px-6">
+    <section className="py-16 px-6 rounded-3xl bg-[#ee9b00]">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+        <div className="text-center mb-12 ">
+          <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4">
             UX Writing Samples
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className=" text-black font-bold text-lg max-w-2xl mx-auto font-bold italic text-[#e9d8a6]">
             Real projects showcasing user-first copy that drives engagement and reduces friction.
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {portfolioProjects.map((project, index) => (
-            <PortfolioCard
-              key={index}
-              title={project.title}
-              description={project.description}
-              tags={project.tags}
-              metrics={project.metrics}
-            />
-          ))}
+
+        <div className="space-y-8">
+          <div className="swiper" ref={topRef}>
+            <div className="swiper-wrapper">
+              {[...top, ...top].map((project, index) => (
+                <div className="swiper-slide !w-auto" key={`top-${index}`}> 
+                  <div className="w-[240px] md:w-[260px] h-[300px] md:h-[320px]">
+                    <PortfolioCard
+                      title={project.title}
+                      description={project.description}
+                      tags={project.tags}
+                      metrics={project.metrics}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="swiper" ref={bottomRef}>
+            <div className="swiper-wrapper">
+              {[...bottom, ...bottom].map((project, index) => (
+                <div className="swiper-slide !w-auto" key={`bottom-${index}`}> 
+                  <div className="w-[240px] md:w-[260px] h-[300px] md:h-[320px]">
+                    <PortfolioCard
+                      title={project.title}
+                      description={project.description}
+                      tags={project.tags}
+                      metrics={project.metrics}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
