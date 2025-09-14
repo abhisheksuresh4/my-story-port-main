@@ -1,4 +1,8 @@
 import { useEffect, useRef } from "react";
+import Swiper from "swiper";
+import { Autoplay, FreeMode } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/free-mode";
 import { PortfolioCard } from "@/components/ui/portfolio-card";
 
 const portfolioProjects = [
@@ -69,12 +73,10 @@ export const PortfolioSection = () => {
   const bottomRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const SwiperGlobal = (window as any).Swiper;
-    if (!SwiperGlobal) return;
-
     const makeSwiper = (el: HTMLDivElement, reverse = false) =>
-      new SwiperGlobal(el, {
-        slidesPerView: 'auto',
+      new Swiper(el, {
+        modules: [Autoplay, FreeMode],
+        slidesPerView: "auto",
         spaceBetween: 16,
         loop: true,
         loopAdditionalSlides: 6,
