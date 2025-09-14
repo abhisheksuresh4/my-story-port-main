@@ -28,7 +28,13 @@ export default {
     "bg-accent",
     "text-accent-foreground",
     "bg-destructive",
-    "text-destructive-foreground"
+    "text-destructive-foreground",
+    // Custom hex colors
+    "bg-hero-orange",
+    "text-text-gold",
+    "bg-body-dark",
+    "bg-services-red",
+    "bg-portfolio-orange"
   ],
   prefix: "",
   theme: {
@@ -78,6 +84,12 @@ export default {
         "hero-bg": "hsl(var(--hero-bg))",
         "portfolio-accent": "hsl(var(--portfolio-accent))",
         "service-bg": "hsl(var(--service-bg))",
+        // Custom hex colors for persistence
+        "hero-orange": "#bb3e05",
+        "text-gold": "#e9d8a6",
+        "body-dark": "#001214",
+        "services-red": "#9b2224",
+        "portfolio-orange": "#ee9b00",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

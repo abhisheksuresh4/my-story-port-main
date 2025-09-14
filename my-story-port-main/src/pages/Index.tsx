@@ -6,7 +6,7 @@ import { Footer } from "@/components/ui/footer";
 
 const Index = () => {
   return (
-    <div className=" bg-[#001218] min-h-screen bg-background ">
+    <div className=" bg-body-dark min-h-screen bg-background ">
       <main className="max-w-7xl mx-auto px-6 py-8 space-y-16">
         <HeroSection />
         <PortfolioSection />

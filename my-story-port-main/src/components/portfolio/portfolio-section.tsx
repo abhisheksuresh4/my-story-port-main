@@ -100,13 +100,13 @@ export const PortfolioSection = () => {
   const bottom = portfolioProjects.slice(3, 6);
 
   return (
-    <section className="py-16 px-6 rounded-3xl bg-[#ee9b00]">
+    <section className="py-16 px-6 rounded-3xl bg-portfolio-orange">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12 ">
           <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4">
             UX Writing Samples
           </h2>
-          <p className=" text-black font-bold text-lg max-w-2xl mx-auto font-bold italic text-[#e9d8a6]">
+          <p className=" text-black font-bold text-lg max-w-2xl mx-auto font-bold italic text-text-gold">
             Real projects showcasing user-first copy that drives engagement and reduces friction.
           </p>
         </div>

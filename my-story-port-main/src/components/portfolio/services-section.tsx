@@ -52,13 +52,13 @@ export const ServicesSection = () => {
   }, []);
 
   return (
-    <section className="py-16 px-6 bg-muted/30 bg-[#9b2224] rounded-3xl">
+    <section className="py-16 px-6 bg-muted/30 bg-services-red rounded-3xl">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <div className="inline-block px-4 py-2 text-primary rounded-full text-sm font-bold italic mb-3 text-5xl ">
             Services
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4 font-bold italic text-[#e9d8a6]">
+          <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4 font-bold italic text-text-gold">
             The services I offer are specifically<br />
             designed to bridge design and communication.
           </h2>

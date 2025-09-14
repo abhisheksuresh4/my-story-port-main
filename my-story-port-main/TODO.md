@@ -1,8 +1,9 @@
-# Footer Creation Task
+# TODO: Fix Colors Persistence After Server Restart
 
-## Steps to Complete:
-- [x] Create Footer component in `src/components/ui/footer.tsx`
-- [x] Edit `src/pages/Index.tsx` to import and add Footer component
-- [x] Verify footer displays correctly
-- [x] Test responsiveness on different screen sizes
-- [x] Ensure styling matches overall design theme
+## Tasks
+- [x] Update tailwind.config.ts to add custom colors for hex values
+- [x] Update src/components/ui/hero-section.tsx to use custom colors
+- [x] Update src/components/portfolio/services-section.tsx to use custom colors
+- [x] Update src/components/portfolio/portfolio-section.tsx to use custom colors
+- [x] Update src/pages/Index.tsx to use custom colors
+- [ ] Restart server and verify colors persist

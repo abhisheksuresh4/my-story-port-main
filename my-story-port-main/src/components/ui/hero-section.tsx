@@ -13,7 +13,7 @@ export const HeroSection = ({
   description = "I bridge product design and communication, crafting clear user-first experiences and compelling product narratives that drive adoption and growth." 
 }: HeroSectionProps) => {
   return (
-    <section className="bg-[#bb3e03] bg-hero-bg rounded-3xl p-8 lg:p-12 min-h-[500px] flex flex-col justify-center relative overflow-hidden">
+    <section className="bg-hero-orange bg-hero-bg rounded-3xl p-8 lg:p-12 min-h-[500px] flex flex-col justify-center relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-6 right-6 w-16 h-16 border-2 border-primary/20 rounded-full"></div>
       <div className="absolute bottom-6 left-6 w-8 h-8 bg-portfolio-accent/30 rounded-full"></div>
@@ -30,7 +30,7 @@ export const HeroSection = ({
             <span className="text-primary">a {title.toLowerCase()}</span>
           </h1>
           
-          <p className="text-lg text-black mb-8 max-w-md font-bold italic text-[#e9d8a6]">
+          <p className="text-lg text-black mb-8 max-w-md font-bold italic text-text-gold">
             {description}
           </p>
           
