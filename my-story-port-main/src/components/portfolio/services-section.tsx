@@ -1,4 +1,8 @@
 import { useEffect, useRef } from "react";
+import Swiper from "swiper";
+import { Autoplay, FreeMode } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/free-mode";
 import { ServiceCard } from "@/components/ui/service-card";
 import { PenTool, MessageSquare, Target, BarChart3 } from "lucide-react";
 
@@ -33,9 +37,10 @@ export const ServicesSection = () => {
   const swiperRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (!swiperRef.current || !(window as any).Swiper) return;
-    const swiper = new (window as any).Swiper(swiperRef.current, {
-      slidesPerView: 'auto',
+    if (!swiperRef.current) return;
+    const swiper = new Swiper(swiperRef.current, {
+      modules: [Autoplay, FreeMode],
+      slidesPerView: "auto",
       spaceBetween: 16,
       loop: true,
       loopAdditionalSlides: 6,
